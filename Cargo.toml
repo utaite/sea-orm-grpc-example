@@ -1,0 +1,47 @@
+[package]
+name = "sea-orm-grpc-example"
+version = "0.1.0"
+edition = "2021"
+
+[[test]]
+name = "test"
+path = "tests/lib.rs"
+
+[workspace]
+members = ["api", "auth", "entity", "migration", "service"]
+
+[workspace.dependencies]
+api = { path = "api" }
+auth = { path = "auth" }
+entity = { path = "entity" }
+migration = { path = "migration" }
+service = { path = "service" }
+
+anyhow = "1.0.94"
+async-std = { version = "1.13.0", features = ["attributes", "tokio1"] }
+dotenv = "0.15.0"
+jsonwebtoken = "9.3.0"
+prost = "0.13.4"
+sea-orm = { version = "1.1.2", features = ["sqlx-mysql", "runtime-tokio", "macros"] }
+serde = { version = "1.0.216", features = ["derive"] }
+strum = "0.26"
+strum_macros = "0.26"
+tokio = { version = "1.29", features = ["macros", "rt-multi-thread", "full"] }
+tonic = "0.12.3"
+
+[dependencies]
+api = { workspace = true }
+auth = { workspace = true }
+entity = { workspace = true }
+migration = { workspace = true }
+service = { workspace = true }
+
+anyhow = { workspace = true }
+dotenv = { workspace = true }
+sea-orm = { workspace = true }
+serde = { workspace = true }
+tokio = { workspace = true }
+tonic = { workspace = true }
+
+[dev-dependencies]
+jsonwebtoken = { workspace = true }

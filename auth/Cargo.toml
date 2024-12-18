@@ -1,0 +1,24 @@
+[package]
+name = "auth"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "auth"
+path = "src/lib.rs"
+
+[[test]]
+name = "test"
+path = "tests/lib.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+jsonwebtoken = { workspace = true }
+serde = { workspace = true }
+strum = { workspace = true }
+strum_macros = { workspace = true }
+tonic = { workspace = true }
+
+[dev-dependencies]
+dotenv = { workspace = true }

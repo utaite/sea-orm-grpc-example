@@ -1,0 +1,22 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "api"
+path = "src/lib.rs"
+
+[dependencies]
+entity = { workspace = true }
+migration = { workspace = true }
+service = { workspace = true }
+
+prost = { workspace = true }
+serde = { workspace = true }
+tonic = { workspace = true }
+tokio = { workspace = true }
+
+[build-dependencies]
+tonic-build = "0.12.3"
